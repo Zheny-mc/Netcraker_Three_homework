@@ -8,6 +8,7 @@ import ru.netcraker.ch3.p4.SheetFormat;
 import ru.netcraker.ch3.p6_p7.Human;
 import ru.netcraker.ch3.p8.Student;
 import ru.netcraker.ch3.p9.Battery;
+import ru.netcraker.ch8_1.ComboLock;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -15,6 +16,26 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        //test_ch3();
+        //test_ch8_1();
+
+
+    }
+
+
+
+    public static void test_ch8_1() {
+        IRun task = () -> {
+            ComboLock comboLock = new ComboLock(List.of(10, 5, 15));
+            comboLock.turnRight(10);
+            comboLock.turnLeft(5);
+            comboLock.turnRight(10);
+            System.out.println("comboLock open = " + comboLock.open());
+        };
+        task.run();
+    }
+
+    public static void test_ch3() {
         IRun task3_1 = () -> {
             List<Product> products = List.of(
                     new Product(100., 150.0),
