@@ -9,20 +9,41 @@ import ru.netcraker.ch3.p6_p7.Human;
 import ru.netcraker.ch3.p8.Student;
 import ru.netcraker.ch3.p9.Battery;
 import ru.netcraker.ch8_1.ComboLock;
+import ru.netcraker.practika.Employee;
+import ru.netcraker.practika.HourlyEmployee;
+import ru.netcraker.practika.Manager;
+import ru.netcraker.practika.SalariedEmployee;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         //test_ch3();
         //test_ch8_1();
-
+        test_practika();
 
     }
 
+    public static void test_practika() {
+        IRun task = () -> {
+            Employee[] staff = new Employee[3];
+            staff[0] = new HourlyEmployee("Morgan, Harry", 30);
+            staff[1] = new SalariedEmployee("Lin, Sally", 52000);
+            staff[2] = new Manager("Smith, Mary", 104000, 50);
 
+            Scanner in = new Scanner(System.in);
+            Arrays.stream(staff).forEach( (e) -> {
+                System.out.print("Hours worked by " + e.getName() + ": ");
+                int hours = in.nextInt();
+                System.out.println("Salary: " + e.weeklyPay(hours));
+            } );
+        };
+        task.run();
+    }
 
     public static void test_ch8_1() {
         IRun task = () -> {
