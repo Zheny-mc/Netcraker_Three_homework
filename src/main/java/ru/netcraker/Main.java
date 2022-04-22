@@ -1,21 +1,21 @@
-import ru.netcraker.ch3.IRun;
+package ru.netcraker;
+
 import ru.netcraker.ch3.p1.CashRegister;
 import ru.netcraker.ch3.p1.Product;
 import ru.netcraker.ch3.p2.CashRegister_2;
 import ru.netcraker.ch3.p4.Sheet;
 import ru.netcraker.ch3.p4.SheetFormat;
-import ru.netcraker.ch3.p6.Human;
+import ru.netcraker.ch3.p6_p7.Human;
+import ru.netcraker.ch3.p8.Student;
+import ru.netcraker.ch3.p9.Battery;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 
     public static void main(String[] args) {
-        IRun task1 = () -> {
+        IRun task3_1 = () -> {
             List<Product> products = List.of(
                     new Product(100., 150.0),
                     new Product(200., 250.0),
@@ -29,9 +29,9 @@ public class Main {
 
             System.out.println("Number of products sold = " + cashReg.getItemCount());
         };
-        //task1.run();
+//        task3_1.run();
 
-        IRun task2 = () -> {
+        IRun task3_2 = () -> {
             List<Product> products = List.of(
                     new Product(100., 150.0),
                     new Product(200., 250.0),
@@ -46,23 +46,23 @@ public class Main {
 
             System.out.println("Total Tax = " + cashReg.getTotalTax());
         };
-        //task2.run();
+//        task3_2.run();
 
-        IRun task3 = () -> {
-            Sheet sheet = new SheetFormat().getFormat(-1);
+        IRun task3_4 = () -> {
+            Sheet sheet = new SheetFormat().getFormat(3);
             System.out.println(sheet);
         };
-//        task3.run();
+//        task3_4.run();
 
-        IRun task4 = () -> {
+        IRun task3_6 = () -> {
             Human human = new Human("Evgeny");
             human.befriend(new Human("Null1"));
             human.befriend(new Human("Null2"));
             System.out.println("human = " + human.getFriendNames());
         };
-        task4.run();
+//        task3_6.run();
 
-        IRun task5 = () -> {
+        IRun task3_7 = () -> {
             Human human = new Human("Evgeny");
             human.befriend(new Human("Null1"));
             human.befriend(new Human("Null2"));
@@ -70,7 +70,36 @@ public class Main {
             System.out.println("the number of friends a person has = "
                     + human.getFriendCount());
         };
-        task5.run();
+//        task3_7.run();
 
+        IRun StudentTester_task3_8 = () -> {
+            Student student = new Student("Evgeniy");
+            student.addQuiz(5);
+            student.addQuiz(5);
+            student.addQuiz(5);
+            System.out.println("student Total Score = " +
+                    student.getTotalScore());
+            System.out.println(
+                    String.format("student Average Score = %.3f",
+                            student.getAverageScore() ) );
+        };
+//        StudentTester_task3_8.run();
+
+        IRun task3_9 = () -> {
+            Battery battery = new Battery(2000);
+            System.out.println(
+                    String.format("initial battery capacity = %.1f", battery.getCapacity()));
+
+            battery.drain(1000);
+
+            System.out.println(
+                    String.format("initial battery capacity before drain = %.1f", battery.getCapacity()));
+
+            battery.charge();
+
+            System.out.println(
+                    String.format("initial battery capacity before charge = %.1f", battery.getCapacity()));
+        };
+//        task3_9.run();
     }
 }

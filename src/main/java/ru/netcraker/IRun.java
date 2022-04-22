@@ -1,4 +1,4 @@
-package ru.netcraker.ch3;
+package ru.netcraker;
 
 public interface IRun {
     void run();

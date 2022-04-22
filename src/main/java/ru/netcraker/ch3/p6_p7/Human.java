@@ -1,4 +1,4 @@
-package ru.netcraker.ch3.p6;
+package ru.netcraker.ch3.p6_p7;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
