@@ -9,6 +9,9 @@ import ru.netcraker.ch3.p6_p7.Human;
 import ru.netcraker.ch3.p8.Student;
 import ru.netcraker.ch3.p9.Battery;
 import ru.netcraker.ch8_1.ComboLock;
+import ru.netcraker.ch9.p2.CurrentTime;
+import ru.netcraker.ch9.p2.WorldTime;
+import ru.netcraker.ch9.p3.MyAlarm;
 import ru.netcraker.practika.Employee;
 import ru.netcraker.practika.HourlyEmployee;
 import ru.netcraker.practika.Manager;
@@ -22,10 +25,26 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //test_ch3();
-        //test_ch8_1();
-        test_practika();
+//        test_ch3();
+//        test_ch8_1();
+//        test_practika();
+//        test_ch9();
+    }
 
+    public static void test_ch9() {
+        IRun task9_2 = () -> {
+            System.out.println("Current Time = " + CurrentTime.getTime());
+            System.out.println("Current Hours = " + CurrentTime.getHours());
+            System.out.println("Current Minutes = " + CurrentTime.getMinutes());
+
+            System.out.println("\n" + WorldTime.getTime());
+        };
+//        task9_2.run();
+
+        IRun task9_3 = () -> {
+            MyAlarm.setAlarm(10);
+        };
+//        task9_3.run();
     }
 
     public static void test_practika() {
